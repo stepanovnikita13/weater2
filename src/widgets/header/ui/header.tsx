@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
           </S.SearchWrapper>
         </Container>
       </S.Header>
-      <Overlay isOpen={isSearching} duration={0.5}>
+      <Overlay isOpen={isSearching} duration={0.3}>
         <Container>List</Container>
       </Overlay>
     </>

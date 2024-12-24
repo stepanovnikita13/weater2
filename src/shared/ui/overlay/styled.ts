@@ -34,5 +34,6 @@ export const Backdrop = styled.div<{ $isOpen?: boolean; $duration: number }>(
     animation-name: ${$isOpen ? fadeIn : fadeOut};
     animation-duration: ${$duration}s;
     animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
   `
 );
