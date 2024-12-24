@@ -1,12 +1,24 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ErrorPage, Root } from "./routes";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ErrorPage, Root, WeatherRoute } from './routes';
+import { ConfigProvider } from 'antd';
+import { appTheme } from './styles/appTheme';
 
 export const router = createBrowserRouter(
   [
     {
-      path: "/",
-      element: <Root /> ,
+      path: '/',
+      element: <Root />,
       errorElement: <ErrorPage />,
+      children: [
+        {
+          path: 'location',
+          element: <div>Empty locations list</div>,
+        },
+        {
+          path: 'location/:locationId',
+          element: <WeatherRoute />,
+        },
+      ],
     },
   ],
   {
@@ -21,6 +33,8 @@ export const router = createBrowserRouter(
 );
 export function App() {
   return (
-    <RouterProvider router={router} future={{ v7_startTransition: true }} />
-  )
+    <ConfigProvider theme={appTheme}>
+      <RouterProvider router={router} future={{ v7_startTransition: true }} />
+    </ConfigProvider>
+  );
 }

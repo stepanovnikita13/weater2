@@ -1,12 +1,14 @@
-import { Typography } from "antd"
+import { Layout } from 'antd';
+import { Header } from '@/widgets/header';
+import { Outlet } from 'react-router-dom';
 
-const { Title } = Typography
-export default function Root() {
-    return (
-        <div>
-            <Title>Root router</Title>
-            <p></p>
-        </div>
-    )
-    
-}
+const Root: React.FC = () => {
+  return (
+    <Layout>
+      <Header />
+      <Outlet />
+    </Layout>
+  );
+};
+
+export default Root;
