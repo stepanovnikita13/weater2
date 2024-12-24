@@ -5,7 +5,8 @@ const token = theme.getDesignToken();
 export namespace S {
   export const Header = styled(Layout.Header)<{ $dropShadow: boolean }>(
     ({ $dropShadow }) => css`
-      padding-inline: 0;
+      padding: 1rem 0;
+      height: auto;
       z-index: 100;
       ${$dropShadow && 'box-shadow:' + token.boxShadowTertiary};
     `

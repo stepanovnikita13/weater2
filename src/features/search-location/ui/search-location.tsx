@@ -24,6 +24,7 @@ export const SearchLocation: React.FC<SearchLocationProps> = ({
       value={value}
       {...props}
       onChange={handleChange}
+      size='large'
     />
   );
 };
